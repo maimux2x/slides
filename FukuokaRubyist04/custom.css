@@ -1,0 +1,42 @@
+/* @theme custom */
+/* Author: maimu */
+
+@import "default";
+@import 'gaia';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+:root {
+  --color-background: #fff;
+  --color-foreground: #333;
+}
+
+section {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+header {
+  background-color: #FF007A;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+section.strong p {
+  color: #333;
+  text-align: left;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+section.image img {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+section.profile img {
+  position: absolute;
+  top: 29%;
+  left: 72%;
+}
