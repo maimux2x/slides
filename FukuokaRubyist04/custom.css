@@ -22,17 +22,18 @@ header {
   font-weight: 800;
 }
 
-section.strong p {
-  color: #333;
+section.pink p {
+  color: #FF007A;
   text-align: left;
   font-size: 2em;
   font-weight: 600;
 }
 
-section.image img {
-  position: absolute;
-  top: 25%;
-  left: 25%;
+section.strong p {
+  color: #333;
+  text-align: left;
+  font-size: 2em;
+  font-weight: 600;
 }
 
 section.profile img {
