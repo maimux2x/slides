@@ -491,15 +491,6 @@ ___
 </style>
 
 ## Girls working hard to become engineers after the Rails Girls Tokyo 16th workshop!
-___
-
-<style scoped>
-  header {
-    display: none;
-  }
-</style>
-
-# Rails Girls is "Our" Gate to Join the Ruby Community.
 
 ___
 
@@ -544,14 +535,3 @@ ___
 
 
 # Fukuoka RubyistKaigi is Your Gate to Join the Ruby Community :D
-
-___
-
-<style scoped>
-  header {
-    display: none;
-  }
-</style>
-
-<!-- _class: pink -->
-Let's have fun!
