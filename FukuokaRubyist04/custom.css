@@ -29,6 +29,10 @@ section.pink p {
   font-weight: 600;
 }
 
+h1 {
+  color: #333;
+}
+
 section.strong p {
   color: #333;
   text-align: left;
