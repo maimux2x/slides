@@ -8,7 +8,7 @@ theme: custom
 
 2024/09/07
 Fukuoka RubyistKaigi 04
-@maimu
+maimu
 ![bg fit right:40%](./images/logo.webp)
 
 ___
@@ -25,9 +25,9 @@ ___
 <!-- _class: profile -->
 
 - maimu(@maimux2x)
-- company: ESM, Inc.
-- A graduate of the Fjord Boot Camp.
-- A member of Fukuoka.rb.
+- 所属: ESM, Inc.
+- Fjord Boot Camp卒業生
+- Fukuoka.rbメンバー
 
 ![w:300](./images/maimu.jpeg)
 
@@ -44,28 +44,17 @@ ___
 
 - Introduction
 
-- The opportunity that enabled me to actively participate in the Ruby community
-
 - Episode1: The translation of the Rails Girls guide
 
 - Episode2: Let's translate together
 
-- Episode3: Lightning talk at Osaka
+- Episode3: Lightning Talk at Osaka
 
 - Episode4: Rails Girls Tokyo16th
 
-- conclusion
+- Conclusion
 
 ___
-
-<!-- header: Introduction -->
-
-- When coincidences are connected, there might be some meaning behind them.
-
-- When you find personal meaning in something, it becomes the driving force behind what you want to do.
-
-___
-
 <style scoped>
   header {
     display: none;
@@ -73,7 +62,17 @@ ___
 </style>
 <!-- _class: pink -->
 
- The opportunity that enabled me to actively participate in the　Ruby community
+
+Introduction
+___
+
+<style scoped>
+  header {
+    display: none;
+  }
+</style>
+
+偶然の出来事の中に自分なりの意味が見つかると、そこから「〇〇をしたい！」というモチベーションが生まれることがある
 
 ___
 
@@ -84,7 +83,7 @@ ___
 </style>
 <!-- _class: strong -->
 
-Question!
+質問です！
 ___
 
 <style scoped>
@@ -95,7 +94,7 @@ ___
 
 <!-- _class: strong -->
 
-What motivated you to start participating in the Ruby community?
+Rubyコミュニティに参加するようになったきっかけは何でしたか？
 ___
 <style scoped>
   header {
@@ -104,7 +103,7 @@ ___
 </style>
 <!-- _class: strong -->
 
-In my case
+私の場合
 ___
 <style scoped>
   header {
@@ -122,19 +121,16 @@ ___
   }
 </style>
 
-### The first time I had a proper conversation with the participants at the social gathering.
+### 懇親会で参加者の方と初めてちゃんと会話をした
 
 ___
 
 <!-- header: Encouraged to attend the event -->
 
-- At the Rails Girls event, I met many female engineers who have built long careers, including **Emori san**(@emorima).
-
-- While there are few women engineers at the company level, I realized that at the community level, I could connect with many experienced female engineers.
+- 江森さん(@emorima)をはじめエンジニアとして長くキャリアを築いている女性の存在を知った
 
 
-- It was the first time I spoke with **Shioi-san** at this event.
-  - Spoke with me very kindly, and that made me really happy.
+- しおいさん(@coe401_)と初めて会話をした
 
 ___
 
@@ -144,7 +140,7 @@ ___
   }
   section.profile img {
   top: 38%;
-  left: 65%;
+  left: 70%;
 }
 </style>
 
@@ -152,9 +148,9 @@ ___
 
 ![w:300](./images/fukuokarb_logo.png)
 
-I started participating in Fukuoka.rb
+Fukuoka.rbに参加し始めたきっかけは
 
-because Shioi san was also attending :)
+しおいさんが参加されていたからでした
 
 ___
 <style scoped>
@@ -172,9 +168,9 @@ ___
   }
 </style>
 
-At this event, I talked about my experience of struggling with programming.
+- FBCに入る前のプログラミング学習の挫折についてLTをした
 
-It was one of the highlights for me when later on, some people who remembered my presentation reached out to me in the Ruby community.
+- 共感だったり色々な感想をいただくことができて嬉しかった経験
 
 ___
 
@@ -193,19 +189,11 @@ ___
 
 <!-- header: The trigger was a post on Slack -->
 
-Shibata san(@hsbt) posted in the ruby-jp Slack,
+柴田さん(@hsbt)がruby-jpのslackに
 
-asking if anyone could help translate the Rails Girls guide.
+「Rails Girlsガイドの翻訳を手伝える方はいませんか？」
 
-___
-
-<style scoped>
-  header {
-    display: none;
-  }
-</style>
-
-At that time, I was about to graduate from a Fjord Boot Camp and should have been busy, but for some reason, I found myself saying, 'I'll do it...  :p
+と投稿されているのを偶然見つけた
 
 ___
 
@@ -215,9 +203,21 @@ ___
   }
 </style>
 
-- At first, I was working on it together with goh san.
+FBCの卒業間近で自作サービスの開発で忙しかったはずが・・・
 
-- It was a great learning experience to exchange reviews for the first time on a PR with someone outside of FBC.
+反射的に「やります！！」と返信していた  :p
+
+___
+
+<style scoped>
+  header {
+    display: none;
+  }
+</style>
+
+- はじめはgohさん(@urimaro)と二人作業
+
+- レビューのやり方などたくさんアドバイスをいただいた
 
 ___
 
@@ -243,9 +243,11 @@ ___
 <!-- header: The oppotunity for change -->
 <!-- _class: large-->
 
-Shibata san adviced me
+柴田さんと
 
-"It would be great if a few more people could help with the translation."
+「翻訳に協力してくれる人がもう少し増えるといいですね」
+
+という会話をした
 
 ___
 
@@ -269,7 +271,7 @@ ___
   }
 </style>
 
-### I wrote a blog summarizing the translation procedure for Rails Girls guide.
+### PRを作成するまでの流れをブログにまとめみた
 ___
 
 <style scoped>
@@ -287,7 +289,8 @@ ___
   }
 </style>
 
-A lot of people spread my blog on X, and the number of people willing to help with the translation increased quickly :O
+たくさんの人がXでブログを拡散してくれた！
+
 ___
 
 <style scoped>
@@ -307,10 +310,17 @@ ___
 </style>
 
 
-Until then, I had always been on the receiving end, getting inspired by the Ruby community.
+それまでの自分はコミュニティからきっかけをもらうことが多かった
 
-But at that moment, by chance, I experienced what it was like to make an impact myself.
+___
 
+<style scoped>
+  header {
+    display: none;
+  }
+</style>
+
+自分がきっかけとなり一つのことに一緒に取り組む初めての経験
 ___
 
 <style scoped>
@@ -323,7 +333,7 @@ ___
 
 Episode3:
 
-Lightning talk at Osaka
+Lightning Talk at Osaka
 
 ___
 
@@ -333,8 +343,7 @@ ___
   }
 </style>
 
-
-I gave a lightning talk about translating the Rails Girls guide at Osaka RubyKaigi 03.
+大阪Ruby会議03でRails Girlsガイドの翻訳についてLTをした
 ___
 
 <style scoped>
@@ -343,18 +352,7 @@ ___
   }
 </style>
 
-
-After the LT, I was approached by the organizer of a Rails Girls workshop in Osaka and a representative from the company providing the venue.
-
-___
-
-<style scoped>
-  header {
-    display: none;
-  }
-</style>
-
-### This conversation prompted me to reflect on my involvement with Rails Girls.
+大阪でRails Girlsのオーガナイザーをされた方が話しかけてくれた
 
 ___
 
@@ -364,14 +362,7 @@ ___
   }
 </style>
 
-I was able to work hard on translating the Rails Girls guide, Because
-
-<br>
-
-- Tanks to the immense support from the Ruby community.<br>
-
-- My own experience of struggling with learning Ruby on Rails motivated me.
-  - Rails Girls guide outlines the steps for beginners to familiarize themselves with programming.
+### ここで自分とRails Girlsの繋がりについて考えてみた
 
 ___
 
@@ -381,9 +372,7 @@ ___
   }
 </style>
 
-Until I participated in the Rails Girls Gathering Japan 2022 event, I didn't know about the existence of Rails Girls.
-
-I thought there might be many women interested in programming who are in the same situation.
+なぜRails Girlsガイドの翻訳を頑張れたのか？
 
 ___
 
@@ -393,7 +382,37 @@ ___
   }
 </style>
 
-### I’m thinking of trying to be an organizer for a Rails Girls workshop in Tokyo.
+- gohさんや柴田さんをはじめ、コミュニティの方がたくさんサポートしてくれた
+
+- 自分のRuby on Railsの学習における挫折経験
+___
+
+<style scoped>
+  header {
+    display: none;
+  }
+</style>
+
+Rails Girls Gathering Japan 2022のイベントに参加するまでRails Girlsのことを知らなかったことを思い出した
+___
+
+<style scoped>
+  header {
+    display: none;
+  }
+</style>
+
+ 自分が知らなかったということは、同じような状況の女性はもっといるのでは？と思った
+
+___
+
+<style scoped>
+  header {
+    display: none;
+  }
+</style>
+
+### 東京でRails Girlsのワークショップをやりたいという気持ちが生まれた
 
 ___
 
@@ -409,9 +428,9 @@ ___
   }
 </style>
 
-When I applied to give a lightning talk at Osaka RubyKaigi 03, I was actually planning to present on a topic unrelated to Rails Girls.
+大阪Ruby会議03のLTに応募する際、
 
-However, after receiving a message from Fjord Boot Camp's mentor, Ito san, I decided to focus on translating the Rails Girls guide as my presentation topic.
+実はRails Girlsガイドの翻訳以外のテーマでの発表を考えていた...
 
 ___
 
@@ -421,7 +440,9 @@ ___
   }
 </style>
 
-If I hadn't received that message, there's a good chance I wouldn't have presented in Osaka, and I might not have considered becoming a Rails Girls organizer either q:
+FBCメンターの伊藤さんがメッセージをくれなかったら大阪でLTをしていなかったかも？
+
+東京でRails Girlsのワークショップをやろうと思わなかったかもしれない q:
 
 ___
 
@@ -445,13 +466,13 @@ ___
   }
 </style>
 
-As a result of reaching out on the Rails Girls JP Slack about wanting to hold a workshop in Tokyo, I found out that **Angel san** from STORES  Inc was also interested in hosting one, and we ended up organizing it together <3
+STORES株式会社のえんじぇるさん(@sweet_chiho)と一緒に東京でRails Girlsのワークショップをやることに！
 
 ___
 
 <!-- header: Rails Girls Tokyo 16th's Theme -->
 
-# The Gate of Programing
+# プログラミングへの入り口
 
 ___
 
@@ -490,8 +511,7 @@ ___
   }
 </style>
 
-## Girls working hard to become engineers after the Rails Girls Tokyo 16th workshop!
-
+## ワークショップ終了後もプログラミングの勉強を続けているGirlsを観測して嬉しい〜！！
 ___
 
 <style scoped>
@@ -512,9 +532,9 @@ ___
   }
 </style>
 
-After attending a Rails Girls event, I happened to get involved in translating the Rails Girls Guide.
+Rails Girlsをきっかけに、Rubyコミュニティでの輪が広がって、
 
-Through that interaction, I found the motivation to organize the Rails Girls Tokyo 16th workshop!
+コミュニティを通じて自分自身も色々なことに取り組むことができた
 
 ___
 
@@ -524,7 +544,7 @@ ___
   }
 </style>
 
-  ## Is there anyone here who is attending a Ruby community event for the first time today?
+  ## 今日がRubyコミュニティのイベントに初参加の方はいますか？
 ___
 
 <style scoped>
@@ -533,5 +553,4 @@ ___
   }
 </style>
 
-
-# Fukuoka RubyistKaigi is Your Gate to Join the Ruby Community :D
+# Fukuoka RubyistKaigi is Your Gate to Join the Ruby Community !!
