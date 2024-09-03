@@ -25,7 +25,7 @@ ___
 <!-- _class: profile -->
 
 - maimu(@maimux2x)
-- 所属: ESM, Inc.
+- 所属: 永和システムマネジメント株式会社
 - Fjord Boot Camp卒業生
 - Fukuoka.rbメンバー
 
