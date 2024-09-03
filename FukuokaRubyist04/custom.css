@@ -7,8 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 :root {
-  --color-background: #fff;
-  --color-foreground: #333;
+  background: #fff;
 }
 
 section {
