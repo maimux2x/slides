@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= h(title) %></title>
+  <%- if description && !description.empty? -%>
+  <meta name="description" content="<%= h(description) %>">
+  <%- end -%>
+  <!-- OGP -->
+  <meta property="og:title" content="<%= h(title) %>">
+  <%- if description && !description.empty? -%>
+  <meta property="og:description" content="<%= h(description) %>">
+  <%- end -%>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= h(base_url) %>/<%= u(folder) %>/">
+  <meta property="og:image" content="<%= h(base_url) %>/<%= u(folder) %>/ogp.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= h(title) %>">
+  <%- if description && !description.empty? -%>
+  <meta name="twitter:description" content="<%= h(description) %>">
+  <%- end -%>
+  <meta name="twitter:image" content="<%= h(base_url) %>/<%= u(folder) %>/ogp.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #16213e;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #0f3460;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .header-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #e0e0e0;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .header-actions a {
+      color: #a8b2d1;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid #0f3460;
+      transition: all 0.2s;
+    }
+
+    .header-actions a:hover {
+      background: #0f3460;
+      color: #fff;
+    }
+
+    .viewer {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 20px;
+      user-select: none;
+    }
+
+    .slide-container {
+      max-width: 960px;
+      width: 100%;
+      position: relative;
+    }
+
+    .slide-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15, 52, 96, 0.8);
+      border: none;
+      color: #e0e0e0;
+      font-size: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .nav-button:hover { background: rgba(15, 52, 96, 1); }
+    .nav-button:disabled { opacity: 0.3; cursor: default; }
+    .nav-prev { left: -60px; }
+    .nav-next { right: -60px; }
+
+    footer {
+      background: #16213e;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      border-top: 1px solid #0f3460;
+    }
+
+    .page-indicator {
+      font-size: 14px;
+      color: #a8b2d1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .progress-bar {
+      flex: 1;
+      max-width: 400px;
+      height: 4px;
+      background: #0f3460;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #e94560;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    @media (max-width: 1100px) {
+      .nav-prev { left: 8px; }
+      .nav-next { right: 8px; }
+      .nav-button { width: 40px; height: 40px; font-size: 20px; background: rgba(15, 52, 96, 0.9); }
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 8px 12px; }
+      .header-title { font-size: 14px; }
+      .viewer { padding: 10px; }
+      .nav-button { width: 36px; height: 36px; font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-title"><%= h(title) %></div>
+    <div class="header-actions">
+      <a href="<%= u(pdf_filename) %>">PDF</a>
+      <a href="../">All Slides</a>
+    </div>
+  </header>
+
+  <div class="viewer" id="viewer">
+    <div class="slide-container">
+      <button class="nav-button nav-prev" id="prevBtn" aria-label="Previous slide">&#9664;</button>
+      <img id="slideImg" src="pages/page_001.png" alt="Slide 1">
+      <button class="nav-button nav-next" id="nextBtn" aria-label="Next slide">&#9654;</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="page-indicator"><span id="currentPage">1</span> / <span id="totalPages"><%= page_count %></span></div>
+  </footer>
+
+  <script>
+    (function() {
+      const totalPages = <%= page_count.to_i %>;
+      let currentPage = 1;
+
+      const slideImg = document.getElementById("slideImg");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const currentPageEl = document.getElementById("currentPage");
+      const progressFill = document.getElementById("progressFill");
+
+      function padNumber(n) {
+        return String(n).padStart(3, "0");
+      }
+
+      function updateSlide() {
+        slideImg.src = "pages/page_" + padNumber(currentPage) + ".png";
+        slideImg.alt = "Slide " + currentPage;
+        currentPageEl.textContent = currentPage;
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+        progressFill.style.width = ((currentPage / totalPages) * 100) + "%";
+      }
+
+      function goNext() {
+        if (currentPage < totalPages) { currentPage++; updateSlide(); }
+      }
+
+      function goPrev() {
+        if (currentPage > 1) { currentPage--; updateSlide(); }
+      }
+
+      // Preload adjacent pages
+      function preload() {
+        if (currentPage < totalPages) {
+          new Image().src = "pages/page_" + padNumber(currentPage + 1) + ".png";
+        }
+      }
+
+      prevBtn.addEventListener("click", function() { goPrev(); preload(); });
+      nextBtn.addEventListener("click", function() { goNext(); preload(); });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); goPrev(); preload(); }
+        if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === " ") { e.preventDefault(); goNext(); preload(); }
+      });
+
+      // Touch swipe
+      let touchStartX = 0;
+      let touchStartY = 0;
+      const viewer = document.getElementById("viewer");
+
+      viewer.addEventListener("touchstart", function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      viewer.addEventListener("touchend", function(e) {
+        const dx = e.changedTouches[0].screenX - touchStartX;
+        const dy = e.changedTouches[0].screenY - touchStartY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+          if (dx < 0) { goNext(); } else { goPrev(); }
+          preload();
+        }
+      }, { passive: true });
+
+      // Click on slide to advance
+      slideImg.addEventListener("click", function(e) {
+        const rect = slideImg.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        if (x < rect.width / 3) { goPrev(); } else { goNext(); }
+        preload();
+      });
+
+      updateSlide();
+      preload();
+    })();
+  </script>
+</body>
+</html>
