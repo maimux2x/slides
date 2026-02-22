@@ -17,56 +17,56 @@ BASE_URL      = 'https://maimux2x.github.io/slides'
 
 IGNORED_DIRS = %w[. .. .git .github scripts templates _site node_modules].freeze
 
-def humanize(folder_name)
-  folder_name
+def humanize(folder)
+  folder
     .gsub(/([a-z\d])([A-Z])/, '\1 \2')
     .gsub(/[_-]/, ' ')
     .gsub(/\b(\w)/) { $1.upcase }
 end
 
-def load_metadata(folder_path, folder_name)
-  meta_path = File.join(folder_path, 'metadata.yml')
+def load_metadata(path, name)
+  meta_path = File.join(path, 'metadata.yml')
 
   if File.exist?(meta_path)
     meta = YAML.safe_load(File.read(meta_path), permitted_classes: [Date, Time]) || {}
+
     {
-      title:       meta['title'] || humanize(folder_name),
+      title:       meta['title'] || humanize(name),
       description: meta['description'] || ''
     }
   else
     {
-      title:       humanize(folder_name),
+      title:       humanize(name),
       description: ''
     }
   end
 end
 
-def u(value)
-  ERB::Util.url_encode(value.to_s)
+def encode_for_url(name)
+  ERB::Util.url_encode(name.to_s)
 end
 
-def find_pdf(folder_path)
-  pdfs = Dir.glob(File.join(folder_path, '*.pdf'))
-
-  pdfs.first
+def find_pdf(path)
+  Dir.glob(File.join(path, '*.pdf')).first
 end
 
-def convert_pdf_to_images(pdf_path, output_dir)
+def convert_pdf_to_images(path, output_dir)
   FileUtils.mkdir_p(output_dir)
 
-  pdf        = Grim.reap(pdf_path)
+  pdf        = Grim.reap(path)
   page_count = pdf.count
 
-  puts "  Converting #{page_count} pages..."
+  puts "Converting #{page_count} pages..."
 
-  pdf.each_with_index do |page, index|
-    page_num    = format('%03d', index + 1)
+  pdf.each_with_index do |page, i|
+    page_num    = format('%03d', i + 1)
     output_path = File.join(output_dir, "page_#{page_num}.png")
 
     page.save(output_path, width: 1280)
 
-    print "  Page #{index + 1}/#{page_count}\r"
+    print "Page #{i + 1}/#{page_count}\r"
   end
+
   puts
 
   page_count
@@ -110,6 +110,7 @@ def build_slide(folder_name, folder_path)
   # Render slide viewer HTML
   html = render_template(
     'slide_viewer.html.erb',
+
     {
       title:        title,
       description:  description,

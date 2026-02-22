@@ -108,8 +108,8 @@
   <div class="grid">
     <%- slides.each do |slide| -%>
     <div class="card">
-      <a href="<%= u(slide[:folder]) %>/">
-        <img class="card-thumbnail" src="<%= u(slide[:folder]) %>/ogp.png" alt="<%= h(slide[:title]) %>" loading="lazy">
+      <a href="<%= encode_for_url(slide[:folder]) %>/">
+        <img class="card-thumbnail" src="<%= encode_for_url(slide[:folder]) %>/ogp.png" alt="<%= h(slide[:title]) %>" loading="lazy">
         <div class="card-body">
           <div class="card-title"><%= h(slide[:title]) %></div>
           <%- if slide[:description] && !slide[:description].empty? -%>
